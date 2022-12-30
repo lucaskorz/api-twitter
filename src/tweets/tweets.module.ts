@@ -1,13 +1,13 @@
-import { Module } from '@nestjs/common';
+import { CacheModule, Module } from '@nestjs/common';
 import { TweetsService } from './tweets.service';
 import { TweetsController } from './tweets.controller';
 import { SequelizeModule } from '@nestjs/sequelize/dist';
 import { Tweet } from './entities/tweet.entity';
-import { TweetsServiceService } from './tweets-service/tweets-service.service';
+import { TweetsCountService } from './tweets-count/tweets-count.service';
 
 @Module({
-  imports: [SequelizeModule.forFeature([Tweet])],
+  imports: [CacheModule.register(), SequelizeModule.forFeature([Tweet])],
   controllers: [TweetsController],
-  providers: [TweetsService, TweetsServiceService],
+  providers: [TweetsService, TweetsCountService],
 })
 export class TweetsModule {}
