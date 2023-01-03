@@ -19,7 +19,6 @@ export class TweetsCountService {
   async countTweets() {
     console.log('procurando tweets');
     let offset = await this.cacheManager.get<number>('tweet-offset');
-    console.log(offset);
     offset = offset === undefined ? 0 : offset;
 
     console.log(`offsets: ${offset}`);
