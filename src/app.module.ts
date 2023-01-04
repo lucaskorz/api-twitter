@@ -28,7 +28,7 @@ import { MailingModule } from './mailing/mailing.module';
     TweetsModule,
     MailingModule,
   ],
-  controllers: [AppController, TestController],
+  controllers: [AppController],
   providers: [AppService, DatabaseService],
 })
 export class AppModule {}
