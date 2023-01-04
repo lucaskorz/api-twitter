@@ -5,7 +5,7 @@ import { Table, Column, Model } from 'sequelize-typescript';
 })
 export class User extends Model {
   @Column
-  text: string;
+  name: string;
 
   @Column
   email: string;

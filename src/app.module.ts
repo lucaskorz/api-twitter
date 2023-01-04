@@ -5,10 +5,10 @@ import { join } from 'path';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DatabaseService } from './database/database.service';
-import { TestController } from './test/test.controller';
 import { TweetsModule } from './tweets/tweets.module';
 import { BullModule } from '@nestjs/bull';
 import { MailingModule } from './mailing/mailing.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -25,6 +25,7 @@ import { MailingModule } from './mailing/mailing.module';
       autoLoadModels: true,
       synchronize: true,
     }),
+    UsersModule,
     TweetsModule,
     MailingModule,
   ],
