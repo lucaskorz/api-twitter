@@ -1,9 +1,0 @@
-GET http://localhost:5000/tweets
-
-###
-POST http://localhost:5000/tweets
-Content-Type: application/json
-
-{
-    "text": "conteúdo do tweet"
-}

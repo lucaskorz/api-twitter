@@ -11,7 +11,7 @@ import {
 import { TweetsService } from './tweets.service';
 import { CreateTweetDto } from './dto/create-tweet.dto';
 import { UpdateTweetDto } from './dto/update-tweet.dto';
-import { JwtAuthGuard } from 'src/auth/shared/jwt-auth.guard';
+import { JwtAuthGuard } from 'src/modules/auth/shared/jwt-auth.guard';
 
 @Controller('tweets')
 export class TweetsController {
