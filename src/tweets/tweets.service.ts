@@ -20,14 +20,18 @@ export class TweetsService {
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} tweet`;
+    return this.tweetModel.findOne<Tweet>({ where: { id } });
   }
 
   update(id: number, updateTweetDto: UpdateTweetDto) {
-    return `This action updates a #${id} tweet`;
+    return this.tweetModel.update<Tweet>(updateTweetDto, {
+      where: {
+        id,
+      },
+    });
   }
 
   remove(id: number) {
-    return `This action removes a #${id} tweet`;
+    return this.tweetModel.destroy<Tweet>({ where: { id } });
   }
 }

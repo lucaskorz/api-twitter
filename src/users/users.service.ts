@@ -12,7 +12,7 @@ export class UsersService {
   ) {}
 
   create(createUserDto: CreateUserDto) {
-    return this.userModel.create(createUserDto as any);
+    return this.userModel.create<User>(createUserDto as any);
   }
 
   findAll() {
@@ -20,14 +20,28 @@ export class UsersService {
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} user`;
+    return this.userModel.findOne<User>({ where: { id } });
+  }
+
+  findEmail(email: string) {
+    console.log(email);
+    return this.userModel.findOne<User>({ where: { email } });
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
+    return this.userModel.update<User>(updateUserDto, {
+      where: {
+        id,
+      },
+    });
   }
 
   remove(id: number) {
-    return `This action removes a #${id} user`;
+    return this.userModel.destroy<User>({
+      where: {
+        id,
+      },
+      force: true,
+    });
   }
 }

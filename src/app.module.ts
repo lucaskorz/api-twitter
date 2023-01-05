@@ -1,3 +1,4 @@
+import { AuthModule } from './auth/auth.module';
 import { Module } from '@nestjs/common';
 import { ScheduleModule } from '@nestjs/schedule';
 import { SequelizeModule } from '@nestjs/sequelize';
@@ -12,6 +13,7 @@ import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
+    AuthModule,
     ScheduleModule.forRoot(),
     BullModule.forRoot({
       redis: {

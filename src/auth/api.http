@@ -1,11 +1,7 @@
-GET http://localhost:5000/users
-
-###
-POST http://localhost:5000/users
+POST http://localhost:5000/auth/signin
 Content-Type: application/json
 
 {
-    "name": "Lucas Korz",
     "email": "lucaskorz10@gmail.com",
     "password": "123456"
 }
