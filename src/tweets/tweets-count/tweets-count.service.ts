@@ -19,7 +19,7 @@ export class TweetsCountService {
     private emailsQueue: Queue,
   ) {}
 
-  //@Interval(5000)
+  @Interval(5000)
   async countTweets() {
     console.log('procurando tweets');
     let offset = await this.cacheManager.get<number>('tweet-offset');
